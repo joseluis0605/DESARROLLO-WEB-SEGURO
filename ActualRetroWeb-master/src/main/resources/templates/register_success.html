@@ -1,0 +1,53 @@
+<!doctype html>
+<!--[if lte IE 9]>
+<html lang="en" class="oldie">
+<![endif]-->
+<!--[if gt IE 9]><!-->
+<html lang="en">
+<!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>HTML, CSS and JS Letter Animation</title>
+    <link href="https://localhost:8443/css/register_success.css" rel="stylesheet" type="text/css"></head>
+</head>
+<body>
+<h3 class="fixed">Click the letters!</h3>
+<div class="word">
+    <br>
+    <h1>Your </h1>
+    <span>R</span>
+    <span>E</span>
+    <span>G</span>
+    <span>I</span>
+    <span>S</span>
+    <span>T</span>
+    <span>E</span>
+    <span>R</span>
+    <h1> has been completed.</h1>
+    <p>Wanna <a href="/login">login</a>? </p>
+    <p>Or would you rather go <a href="/">home</a>?</p>
+
+</div>
+<footer>
+    <p>&nbsp;</p>
+</footer>
+<script >
+    const spans = document.querySelectorAll('.word span');
+
+    spans.forEach((span, idx) => {
+        span.addEventListener('click', (e) => {
+            e.target.classList.add('active');
+        });
+        span.addEventListener('animationend', (e) => {
+            e.target.classList.remove('active');
+        });
+
+        // Initial animation
+        setTimeout(() => {
+            span.classList.add('active');
+        }, 750 * (idx+1))
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Selling game</title>
+    <link href="https://localhost:8443/css/forms.css" rel="stylesheet" type="text/css">
+
+</head>
+<body>
+
+<div class="sell-box">
+    <h2>Sell console</h2>
+    <form action="/products/consoles/sell" method="post" id="console">
+        <br>
+        <div class="user-box">
+            <input type="text"  name="name" required="" pattern="[a-zA-Z\u00f1\u00d1\u00E0-\u00FC\u0020]+">
+            <label>Name</label>
+        </div>
+        <div class="user-box">
+            <input type="number" min="0" name="price" required="">
+            <label>&#8364;</label>
+        </div>
+        <div class="user-box">
+            <input type="number" min="0" name="maxcon" required="">
+            <label>Controllers</label>
+        </div>
+
+        <br >
+
+        <!--<div class="user-box"> <input type="date" name="date"> </div>-->
+        <input type="hidden" name="_csrf" value="{{token}}"/>
+        <input onclick="getData()" type="submit" value="Submit"/>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        </input>
+    </form>
+</div>
+<div class="left">
+	<div class="desc">
+		<script type="text/javascript" src="https://cdn.ckeditor.com/4.9.2/standard/ckeditor.js"></script>
+		<label style = "color: white;">Description</label>
+        <textarea name="description" form="console"></textarea>
+		<script type="text/javascript" src="/js/Description.js"></script>
+	</div>
+</div>
+</body>
+</html>

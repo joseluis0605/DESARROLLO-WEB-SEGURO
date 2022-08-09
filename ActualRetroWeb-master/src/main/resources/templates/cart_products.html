@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cart</title>
+    <link href="../css/cart.css" rel="stylesheet" type="text/css">
+</head>
+<header></header>
+<body>
+<div class="bg-7">
+    <h1 class="t-stroke"></h1>
+</div>
+
+<br>
+<br>
+<br>
+<br><br>
+
+<div>
+    <ul>
+{{#consoles}}
+<li>{{name}} {{price}}&#8364; <form action="../product/remove/console/{{id}}" method="get">
+    <input type="hidden" name="_csrf" value="{{token}}"/>
+    <input type="submit" value="Delete">
+    </form></li>
+    {{/consoles}}
+    </ul>
+    <ul>
+        {{#videogames}}
+<li>{{name}} {{price}}&#8364; <form action="../product/remove/videogame/{{id}}" method="get">
+    <input type="hidden" name="_csrf" value="{{token}}"/>
+    <input type="submit" value="Delete">
+    </form></li>
+{{/videogames}}
+        </ul>
+    <ul>
+        <li>TOTAL PRICE: {{totalprice}} &#8364;</li>
+    </ul>
+</div>
+<form action="/product/buy" method="get"> <input type="submit" value="PAY!"></form>
+<div>
+    <a href="/">Go to home</a>
+</div>
+</body>
+</html>

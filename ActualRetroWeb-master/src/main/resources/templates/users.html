@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Usuarios Registrados</title>
+    <link href="https://localhost:8443/css/users.css" rel="stylesheet" type="text/css">
+
+</head>
+<body style="background-color: black;">
+
+<div class="testbox">
+
+    <h1><b>Welcome to the admin page, {{account}}</b></h1>
+    <h3><b>These are the currently registered users...</b></h3>
+
+    {{#users}}
+    <br>
+    <h2><b><a href="/users/{{id}}">{{name}}</a></b></h2>
+    <form action="/users/delete/{{id}}" method="post">
+        <input type="hidden" name="_csrf" value="{{token}}"/>
+        <div class="boton">
+            <input type="submit" value="DELETE">
+        </div>
+    </form>
+    {{/users}}
+</div>
+<div class="burbujas">
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+
+</div>
+</body>
+</html>

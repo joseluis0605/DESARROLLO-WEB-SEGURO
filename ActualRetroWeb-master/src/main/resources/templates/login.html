@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>LOGIN</title>
+  <link href="https://localhost:8443/css/login.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<form class="login-form" method="post" action="/login">
+  <p class="login-text">
+    <span class="fa-stack fa-lg">
+      <i class="fa fa-circle fa-stack-2x"></i>
+      <i class="fa fa-lock fa-stack-1x"></i>
+    </span>
+  </p>
+  <input id="username" name="username" class="login-username" autofocus required placeholder="Username" />
+  <input type="password" id="password" name="password" class="login-password" required placeholder="Password" />
+  <input type="hidden" name="_csrf" value="{{token}}"/>
+  <input type="submit" value="Login" class="login-submit"/>
+</form>
+<p style="color: white;">No account to login with? Register <a class="reg" href="https://localhost:8443/register">here</a>!</p>
+<div class="underlay-photo"></div>
+<div class="underlay-black"></div>
+</body>
+
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Selling game</title>
+    <link href="https://localhost:8443/css/forms.css" rel="stylesheet" type="text/css">
+
+</head>
+<body>
+
+<div class="sell-box">
+    <h2>Sell videogame</h2>
+    <form action="/products/videogames/sell" method="post" id="videogame">
+        <div class="user-box">
+            <input type="text" name="name" required="" pattern="[a-zA-Z\u00f1\u00d1\u00E0-\u00FC\u0020]+">
+            <label>Name:</label>
+        </div>
+        <div class="user-box">
+            <input type="number" min="1" name="price" required="">
+            <label>&#8364;</label>
+        </div>
+        <div class="user-box">
+            <label>PEGI:</label>
+            <br> <br>
+            <select class="selector" name="pegi">
+                <option value="0">NO-PEGI</option>
+                <option value="3">3+</option>
+                <option value="6">6+</option>
+                <option value="7">7+</option>
+                <option value="12">12+</option>
+                <option value="18">18+</option>
+            </select>
+        </div>
+        <!--<div class="user-box"> <input type="date" name="date"> </div>-->
+        <br>
+        <div class="user-box">
+            <label>Videogame genre:</label>
+            <br> <br>
+            <select class="selector" name="genre">
+                <option value="ACTION">Action</option>
+                <option value="ADVENTURE">Adventure</option>
+                <option value="CASUAL">Casual</option>
+                <option value="FIGHTING">Fighting</option>
+                <option value="FPS">FPS</option>
+                <option value="METROIDVANIA">Metroidvania</option>
+                <option value="MMORPG">MMORPG</option>
+                <option value="OPENWORLD">Openworld</option>
+                <option value="PARTY">Party</option>
+                <option value="PLATFORMS">Platforms</option>
+                <option value="PUZZLES">Puzzles</option>
+                <option value="RACING">Racing</option>
+                <option value="RHYTHM">Rhythm</option>
+                <option value="ROGUELIKE">Roguelike</option>
+                <option value="ROGUELITE">Roguelite</option>
+                <option value="SANDBOX">Sandbox</option>
+                <option value="SIMULATION">Simulation</option>
+                <option value="SOULSLIKE">Soulslike</option>
+                <option value="SPORTS">Sports</option>
+                <option value="STRATEGY">Strategy</option>
+                <option value="SURVIVALHORROR">SurvivalHorror</option>
+                <option value="TACTICALRPG">Tactical RPG</option>
+                <option value="TURNBASEDRPG">Turn-Based RPG</option>
+                <option value="VISUALNOVEL">Visual Novel</option>
+            </select></div>
+            <br>
+        <input type="hidden" name="_csrf" value="{{token}}"/>
+        <div class="dropdown-content"> <input id="getData" onclick="getData()" type="submit" value="Submit"/>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </input>
+       </div>
+    </form>
+</div>
+<div class="left">
+		<div class="desc">
+			<script type="text/javascript" src="https://cdn.ckeditor.com/4.9.2/standard/ckeditor.js"></script>
+			<label style = "color: white;">Description</label>
+			<textarea name="description" form="videogame"></textarea>
+			<script type="text/javascript" src="/js/Description.js"></script>
+		</div>
+	</div>
+</body>
+</html>

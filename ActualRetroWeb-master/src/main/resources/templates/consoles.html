@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en-US" xmlns="http://www.w3.org/1999/html">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title> </title>
+  <link href="https://localhost:8443/css/consoles.css" rel="stylesheet" type="text/css">
+
+</head>
+<body>
+<!-- Main Container -->
+<div class="container">
+  <!-- Navigation -->
+  <header> <a href="">
+    <!-- Antigua imagen: https://www.crushpixel.com/big-static20/preview4/console-joystick-icon-cartoon-3876206.jpg-->
+    <h4 class="logo"><img src="https://cdn-icons-png.flaticon.com/512/2004/2004993.png" width="40" height="35"> </h4>
+  </a>
+    <nav>
+      <ul>
+        <li><a href="/">HOME</a></li>
+
+      </ul>
+    </nav>
+  </header>
+  <!-- Hero Section -->
+  <section class="hero" id="hero">
+    <h2 class="hero_header"><font face="impact" size ="350" color="black">CONSOLES LIST...</font></h2>
+    <p><strong> BEST SHOP, BEST DISCOUNT</strong></p>
+  </section>
+  <script type="text/javascript">
+    function getData() {
+      var pricemin = document.getElementById("pricemin").value;
+      var pricemax = document.getElementById("pricemax").value;
+      url=null;
+      if (pricemin.isNumeric() && pricemax.isNumeric()) {
+        url = "/products/consoles/pricefilter/" + pricemin + "/" + pricemax;
+      }
+      window.location.href(url);
+    }
+  </script>
+  <section class="about" id="about">
+    <h2 class="hidden">About</h2>
+
+    <div id="contenedor">
+
+      <div id="izquierda">
+        <div style="text-align: justify;">
+          {{#vdConsolesUploaded}}
+          <a href="consoles/{{id}}">{{name}}</a> Price: {{price}}€
+          <br>
+          <form method="get" action="/products/consoles/delete/{{id}}">
+            <input type="hidden" name="_csrf" value="{{token}}"/>
+            <input type="submit" value="DELETE">
+          </form>
+          <br>
+          {{/vdConsolesUploaded}}
+          {{#vdConsoles}}
+          <a href="consoles/{{id}}">{{name}}</a> Price: {{price}}€
+          <form action="/product/buy/console/{{id}}">
+            <input type="hidden" name="_csrf" value="{{token}}"/>
+            <input type="submit" value="BUY!">
+          </form>
+            {{#isadmin}}
+            <form method="get" action="/products/consoles/delete/{{id}}">
+              <input type="hidden" name="_csrf" value="{{token}}"/>
+              <input type="submit" value="DELETE">
+            </form>
+            {{/isadmin}}
+          </form><br>
+          {{/vdConsoles}}
+        </div>
+      </div><!--izquierda-->
+
+
+      <div id="derecha">
+        <form action="/filter/consoles/pricefilter/">
+          <p>minimum price</p>
+          <input type="number" min="1" max="4999" name="pricemin" id="pricemin">
+          <label>€</label>
+          <br>
+          <p>maximum  price</p>
+          <input type="number" min="1" max="4999" name="pricemax" id="pricemax">
+          <label>€</label>
+          <br>
+          <input type="hidden" name="_csrf" value="{{token}}"/>
+          <input type="submit" onclick="getData()" value="ENVIAR">
+        </form>
+
+
+        <form action="/filter/consoles/controllersfilter/" method="get">
+          <p>MAXIMUM OF CONSOLE CONTROLS</p>
+          <input type="number" min="1" name="maxcon" required="">
+          <label>years</label>
+          <br>
+          <input type="hidden" name="_csrf" value="{{token}}"/>
+          <input type="submit" value="ENVIAR"/>
+        </form>
+
+      </div>
+
+
+
+
+
+    </div>
+
+
+  </section>
+  <!-- Stats Gallery Section -->
+  <!-- Parallax Section -->
+  <section class="banner"> </section>
+  <!-- More Info Section -->
+  <footer> </footer>
+  <!-- Footer Section -->
+  <!-- Copyrights Section -->
+  <div class="copyright">ACTUALRETRO, BEST SHOP, BEST DISCOUNTS...<br>
+  </div>
+</div>
+<!-- Main Container Ends -->
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Updated Console :)</title>
+    <link href="https://localhost:8443/css/saved_console.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<h3 class="fixed">Click the letters!</h3>
+<div class="word">
+
+  <p>{{console.name}} has been</p>
+  <span>S</span>
+  <span>A</span>
+  <span>V</span>
+  <span>E</span>
+  <span>D</span>
+  <br>
+  <a href="/">Back to home</a>
+</div>
+<script >
+    const spans = document.querySelectorAll('.word span');
+
+    spans.forEach((span, idx) => {
+        span.addEventListener('click', (e) => {
+            e.target.classList.add('active');
+        });
+        span.addEventListener('animationend', (e) => {
+            e.target.classList.remove('active');
+        });
+
+        // Initial animation
+        setTimeout(() => {
+            span.classList.add('active');
+        }, 750 * (idx+1))
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title><b>{{user.name}}'s profile</>b></title>
+    <link href="https://localhost:8443/css/user.css" rel="stylesheet" type="text/css">
+
+</head>
+<body style="background-color: black;">
+<div class="testbox">
+    <div class="wrapper">
+        <p class="title">{{user.name}}</p>
+    </div>
+    <p>Email:  <b>{{user.mail}}</b></p>
+    <br> <p>Phone number: <b>{{user.phone}}</b></p>
+    <br> <p><b>Uploaded or sold consoles:</b></p>
+    <ul>
+        {{#user.consolesUploaded}}
+        <li>{{name}}, {{price}} &#8364;</li>
+        {{/user.consolesUploaded}}
+    </ul>
+    <br> <p><b>Uploaded or sold videogames:</b></p>
+    <ul>
+        {{#user.videogamesUploaded}}
+        <li>{{name}}, {{price}} &#8364;</li>
+        {{/user.videogamesUploaded}}
+    </ul>
+    {{#isadmin}}
+    <h4><u>Additional information for users with privileges:</u></h4>
+    <br><p><b>Current shopping cart:</b></p>
+    <ul>
+        {{#consolecart}}
+        <li>{{name}}</li>
+        {{/consolecart}}
+        {{#videogamecart}}
+        <li>{{name}}</li>
+        {{/videogamecart}}
+    </ul>
+    <br> <p><b>Consoles bought:</b></p>
+    <ul>
+        {{#user.consolesHistory}}
+        <li>{{name}}, {{price}}&#8364;</li>
+        {{/user.consolesHistory}}
+    </ul>
+    <br> <p><b>Videogames bought:</b></p>
+    <ul>
+        {{#user.videogamesHistory}}
+        <li>{{name}}, {{price}}&#8364;</li>
+        {{/user.videogamesHistory}}
+    </ul>
+    {{/isadmin}}
+
+</div>
+<div class="burbujas">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+</div>
+</body>
+</html>

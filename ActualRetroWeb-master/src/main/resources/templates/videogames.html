@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Videogames Available</title>
+    <link href="https://localhost:8443/css/videogames.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div class="container">
+    <header> <a href="">
+        <h4 class="logo"><img src="https://cdn-icons-png.flaticon.com/512/2004/2004993.png" width="40" height="35"> </h4>
+    </a>
+        <nav>
+            <ul>
+                <li><a href="/">HOME</a></li>
+
+            </ul>
+        </nav>
+    </header>
+    <section class="hero" id="hero">
+        <h2 class="hero_header"><font face="impact" size ="350" color="black">VIDEOGAMES LIST...</font></h2>
+        <p><strong> BEST SHOP, BEST DISCOUNT</strong></p>
+    </section>
+    <section class="about" id="about">
+        <h2 class="hidden">About</h2>
+
+        <div id="contenedor">
+
+            <div id="izquierda">
+                <div style="text-align: justify;">
+                    {{#videogamesUpdated}}
+                    <a href="consoles/{{id}}">{{name}}</a> Price: {{price}}€
+                    <br>
+                    <form method="get" action="/products/consoles/delete/{{id}}">
+                        <input type="hidden" name="_csrf" value="{{token}}"/>
+                        <input type="submit" value="DELETE">
+                    </form>
+                    <br>
+                    {{/videogamesUpdated}}
+                    {{#videogames}}
+                    <a href="videogames/{{id}}">{{name}}</a> Price: {{price}} <form action="/product/buy/videogame/{{id}}">
+                    <input type="hidden" name="_csrf" value="{{token}}"/>
+                    <input type="submit" value="BUY!">
+                    </form>
+                    {{#isadmin}}
+                    <form action="/products/videogames/delete/{{id}}">
+                        <input type="hidden" name="_csrf" value="{{token}}"/>
+                        <input type="submit" value="DELETE">
+                    </form>
+                    {{/isadmin}}
+                    {{/videogames}}
+                </div>
+            </div>
+            <div id="derecha">
+                <form action="/filter/videogames/pricefilter/" method="get">
+                    <p>minimum price</p>
+                    <input type="number" min="1" max="4999" name="pricemin" required="">
+                    <label>€</label>
+                    <br>
+                    <p>maximum  price</p>
+                    <input type="number" min="1" max="4999" name="pricemax" required="">
+                    <label>€</label>
+                    <input type="submit" value="ENVIAR">
+                </form>
+
+                <form action="/filter/videogames/pegifilter/" method="get">
+                    <p>PEGI FILTER</p>
+                    <input type="number" min="0" name="pegi" required="">
+                    <label>years</label>
+                    <br>
+                    <input type="submit" value="ENVIAR"/>
+                </form>
+            </div>
+
+        </div>
+
+
+
+    </section>
+
+
+
+    <section class="banner"> </section>
+
+    <footer> </footer>
+    <div class="copyright">ACTUALRETRO, BEST SHOP, BEST DISCOUNTS...<br>
+    </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,280 @@
+.testbox{
+    background-color: white;
+    border: 2px solid black;
+    padding: 15px;
+    text-align: center;
+    margin: 20px auto;
+    width: 400px;
+}
+
+#texto{
+    font: bold 30px Tahoma;
+    width: 100%;
+}
+.boton.tres::after {
+    content: "";
+    width: 100%;
+    height: 300px;
+    background: lightskyblue;
+    position: absolute;
+    z-index: 1;
+    top: -300px;
+    left: 0;
+    transition: .4s ease-in-out all;
+    border-radius: 0px 0px 300px 300px;
+}
+
+.boton.tres:hover::after {
+    top: 0;
+}
+body {
+    margin: 0;
+    background: rgb(85, 212, 221);
+}
+
+.titulo {
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(15, 121, 148);
+    margin-top: 20vh;
+    animation: flotar 2s linear infinite alternate;
+}
+
+@keyframes flotar {
+    to {
+        margin-top: 15vh;
+    }
+}
+
+.burbujas div {
+    background: rgb(46, 141, 185);
+    border-radius: 100%;
+    position: absolute;
+    bottom: 0;
+    animation: animarburbujas 4s linear infinite;
+}
+
+.burbujas div:nth-child(1) {
+    width: 50px;
+    height: 45px;
+    left: 40px;
+    animation-duration: 4s;
+}
+
+.burbujas div:nth-child(2) {
+    width: 60px;
+    height: 55px;
+    left: 25%;
+    animation-duration: 8s;
+}
+
+.burbujas div:nth-child(3) {
+    width: 30px;
+    height: 27px;
+    left: 40%;
+    animation-duration: 5s;
+}
+
+.burbujas div:nth-child(4) {
+    width: 65px;
+    height: 60px;
+    left: 50%;
+    animation-duration: 10s;
+}
+
+.burbujas div:nth-child(5) {
+    width: 55px;
+    height: 50px;
+    left: 65%;
+    animation-duration: 6.5s;
+}
+
+.burbujas div:nth-child(6) {
+    width: 50px;
+    height: 48px;
+    left: 85%;
+    animation-duration: 9s;
+}
+
+.burbujas div:nth-child(7) {
+    width: 35px;
+    height: 32px;
+    left: 90%;
+    animation-duration: 6s;
+}
+
+@keyframes animarburbujas {
+    0% {
+        width: 0;
+        height: 0;
+    }
+    3% {
+        width: 30px;
+        height: 27px;
+    }
+    50% {
+        margin-left: 20px;
+        opacity: 0.5;
+    }
+    100% {
+        transform: rotate(90deg);
+        bottom: 100vh;
+        background: rgb(27, 143, 197);
+    }
+}
+
+
+
+
+
+
+
+
+
+@import url(https://fonts.googleapis.com/css?family=Oswald:400,700);
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+*,
+:before,
+:after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    min-height: 100%;
+}
+
+
+
+.wrapper {
+    text-align: center;
+}
+
+.title {
+    font-size: 2em;
+    position: relative;
+    margin: 0 auto 1em;
+    padding: 1em 1em .25em 1em;
+    text-align: center;
+    text-transform: uppercase;
+}
+.title:after {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    width: 240px;
+    height: 4px;
+    margin-left: -120px;
+    content: '';
+    background-color: blue;
+}
+
+/* Clip text element */
+.clip-text {
+    font-size: 6em;
+    font-weight: bold;
+    line-height: 1;
+    position: relative;
+    display: inline-block;
+    margin: .25em;
+    padding: .5em .75em;
+    text-align: center;
+    /* Color fallback */
+    color: blue;
+    -webkit-background-clip: text;
+
+    -webkit-text-fill-color: transparent;
+}
+
+.clip-text:before,
+.clip-text:after {
+    position: absolute;
+    content: '';
+}
+
+
+/* Change the background position to display letter when the black zone isn't here */
+.clip-text--no-textzone:before {
+    background-position: -.65em 0;
+}
+
+.clip-text--no-textzone:after {
+    content: none;
+}
+
+/* Use Background-size cover for photo background and no-repeat background */
+.clip-text--cover,
+.clip-text--cover:before {
+    background-repeat: no-repeat;
+    -webkit-background-size: cover;
+    background-size: cover;
+}
+
+/* Background image from http://thepatternlibrary.com/ and http://lorempixel.com */
+.clip-text_one {
+    background-image: url(http://lorempixel.com/480/200/abstract/7);
+}
+
+.clip-text_two {
+    background-image: url(http://lorempixel.com/480/200/abstract);
+}
+
+.clip-text_tree {
+    background-image: url(http://lorempixel.com/480/200/abstract/2);
+}
+
+.clip-text_four {
+    background-image: url(http://lorempixel.com/480/200/abstract/4);
+}
+
+.clip-text_five {
+    background-image: url(http://lorempixel.com/480/200/abstract/5);
+}
+
+.clip-text_six {
+    background-image: url(http://lorempixel.com/480/200/abstract/9);
+}
+
+.clip-text_seven {
+    background-image: url(http://lorempixel.com/480/200/abstract/8);
+}
+
+.clip-text_eight {
+    background-image: url(http://lorempixel.com/410/200/people);
+}
+
+.clip-text_nine {
+    background-image: url(http://lorempixel.com/480/200/nightlife);
+}
+
+.clip-text_ten {
+    background-image: url(http://lorempixel.com/480/200/nightlife/8);
+}
+
+.clip-text_eleven {
+    background-image: url(http://lorempixel.com/480/200/fashion/10/cc);
+    background-size: cover;
+}
+
+.clip-text_twelve {
+    background-image: url(http://lorempixel.com/480/200/people/7/cc);
+}
+
+.clip-text_thirteen {
+    background-image: url(http://lorempixel.com/480/200/food/5/cc);
+}
+
+.clip-text_fourteen {
+    background-image: url(http://lorempixel.com/480/200/city/9/cc);
+}
+
+.clip-text_fifteen {
+    background-image: url(http://lorempixel.com/480/200/nightlife/5);
+}

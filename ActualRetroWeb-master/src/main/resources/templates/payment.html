@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>PAYMENT</title>
+</head>
+<body>
+<p>You've payed {{totalprod}} products.</p>
+<p>The price is: {{totalprice}}&#8364;</p>
+<p>YOUR PRODUCTS ARE:</p>
+<p>1. Consoles:</p>
+<ul>
+    {{#consoles}}
+<li>{{name}}, {{price}} &#8364;</li>
+    {{/consoles}}
+</ul>
+
+
+
+<p>2. Videogames:</p>
+<ul>
+{{#videogames}}
+<li>{{name}}, {{price}}&#8364;</li>
+{{/videogames}}
+</ul>
+<br>
+<p> THANKS!</p>
+<a href="/">Go to home</a>
+<div><img src="https://media0.giphy.com/media/URd2XgYe4nfFrXUGzw/giphy.gif?cid=6c09b952893ea1c6d9607b181eda28d6c91917d5144eb226&rid=giphy.gif&ct=s"></div>
+</body>
+</html>
